@@ -1,9 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ira/admin/home.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
 import '../Home/home.dart';
 import 'register.dart';
 
@@ -37,7 +38,7 @@ class _LoginPageState extends State<LoginPage> {
           return new Container(
             padding: EdgeInsets.symmetric(
                 vertical: size.height * 0.42, horizontal: size.width * 0.4),
-            child: Container(child: CircularProgressIndicator()),
+            child: Container(child: Center(child: CircularProgressIndicator())),
           );
         });
   }
@@ -50,9 +51,11 @@ class _LoginPageState extends State<LoginPage> {
           this.verificationId = verificationId;
           smsOTPDialog(context).then((value) {});
         };
+        print(this.phoneNo);
         await auth.verifyPhoneNumber(
             phoneNumber: this.phoneNo,
             codeAutoRetrievalTimeout: (String verId) {
+              print(this.verificationId);
               this.verificationId = verId;
             },
             codeSent: smsOTPSent,
@@ -248,9 +251,9 @@ class _LoginPageState extends State<LoginPage> {
                         style: TextStyle(fontSize: size.width * 0.04),
                         validator: ((value) {
                           if (value!.isEmpty)
-                            return "Enter Valide Phone Number";
-                          else if (value.length < 10)
-                            return "Enter Valide Phone Number";
+                            return "Enter Valid Phone Number";
+                          else if (value.length < 9)
+                            return "Enter Valid Phone Number";
                           return null;
                         }),
                         maxLength: 10,
@@ -267,10 +270,10 @@ class _LoginPageState extends State<LoginPage> {
                                 BorderSide(color: Colors.white, width: 2.0),
                           ),
                           labelText: 'Enter Phone Number',
-                          prefix: Text('+91'),
+                          prefix: Text('+254'),
                         ),
                         onChanged: (value) {
-                          this.phoneNo = '+91$value';
+                          this.phoneNo = '+254$value';
                         },
                       ),
                     ),

@@ -252,7 +252,7 @@ class _LoginPageState extends State<LoginPage> {
                         validator: ((value) {
                           if (value!.isEmpty)
                             return "Enter Valid Phone Number";
-                          else if (value.length < 9)
+                          else if (value.length < 10)
                             return "Enter Valid Phone Number";
                           return null;
                         }),
@@ -270,10 +270,10 @@ class _LoginPageState extends State<LoginPage> {
                                 BorderSide(color: Colors.white, width: 2.0),
                           ),
                           labelText: 'Enter Phone Number',
-                          prefix: Text('+254'),
+                          prefix: Text('+91'),
                         ),
                         onChanged: (value) {
-                          this.phoneNo = '+254$value';
+                          this.phoneNo = '+91$value';
                         },
                       ),
                     ),

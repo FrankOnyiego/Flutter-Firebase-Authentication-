@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "176427095820",
+    "project_id": "myphone-otp",
+    "storage_bucket": "myphone-otp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:176427095820:android:f35e87c6d5ca160257db29",
+        "android_client_info": {
+          "package_name": "com.example.ira_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "176427095820-b0se0nohm22ob1q9oo9jjqm0kbolnv8s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIXcfhFPtHdb63EJbPZL8zusVJANoZfWQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "176427095820-b0se0nohm22ob1q9oo9jjqm0kbolnv8s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
